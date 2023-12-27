@@ -63,3 +63,7 @@ class DBStorage:
         """reload db"""
         Base.metadata.create_all(self.__engine)
         self.__session = Session(self.__engine)
+
+    def close(self):
+        """Exit the session"""
+        self.__session.close()
