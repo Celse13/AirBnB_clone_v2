@@ -4,7 +4,6 @@ from os import getenv
 from sqlalchemy import Column, String, ForeignKey, Integer, Float, Table
 from sqlalchemy.orm import relationship
 import models
-from models.amenity import Amenity
 from models.base_model import BaseModel, Base
 from models.review import Review
 
@@ -49,5 +48,6 @@ class Place(BaseModel, Base):
 
         @amenities.setter
         def amenities(self, amen):
+            from models.amenity import Amenity
             if isinstance(amen, Amenity):
                 self.amenity_ids.append(amen.id)
