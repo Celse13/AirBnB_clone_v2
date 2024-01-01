@@ -19,7 +19,8 @@ def load_hbnb():
     """Loading function for the information about states id and name."""
     amenities = storage.all(Amenity)
     states = storage.all(State)
-    return render_template('10-hbnb_filters.html', states=states, amenities=amenities)
+    return render_template('10-hbnb_filters.html', states=states,
+                           amenities=amenities)
 
 
 @app.teardown_appcontext
